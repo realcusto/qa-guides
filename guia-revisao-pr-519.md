@@ -286,6 +286,34 @@ segundos. O sistema **não** fica travado tentando por muito tempo.
 > Observação: com credenciais **corretas**, a conexão e a sincronização devem
 > continuar funcionando normalmente, como antes.
 
+### 5.2 — Após a publicação, sincronizar para repovoar o Real Análise
+
+**Objetivo:** confirmar que, depois desta versão ir ao ar, os dados financeiros do
+Real Análise (**Fluxo de Caixa** e **DRE**) voltam a aparecer após uma
+sincronização feita **pela tela**.
+
+> Importante: esta versão faz uma limpeza interna dos lançamentos financeiros do
+> Real Análise. Por isso eles ficam **temporariamente vazios** até a **primeira
+> sincronização** — isso é **esperado** e se resolve com o passo a passo abaixo.
+> Essa ação **precisa ser feita** pelo menos uma vez após a publicação.
+
+**Passo a passo:**
+
+1. Vá em **Módulos → Real Análise → Integrações**.
+2. Antes de sincronizar, abra **Fluxo de Caixa** e **DRE** e observe que podem
+   estar **sem dados** (vazios). Isso é normal neste momento.
+3. Volte em **Integrações** e clique em **"Sincronizar"** na conexão
+   (Omie/Bling/etc.).
+4. Aguarde a barra **"Sincronizando…"** terminar — pode levar **alguns minutos**,
+   conforme o tamanho do histórico.
+5. Abra novamente **Fluxo de Caixa** e **DRE**.
+
+**Resultado esperado:**
+
+- Depois que a sincronização termina, **Fluxo de Caixa** e **DRE** voltam a
+  mostrar os lançamentos normalmente.
+- Os valores **não aparecem duplicados** (cada lançamento uma única vez).
+
 ---
 
 ## 6. O que NÃO precisa de teste manual (apenas para transparência)
@@ -324,3 +352,4 @@ aparecendo trocados entre empresas, **avise o time imediatamente**.
 | 4.1 | Status de Expedição (salvar/reordenar/sem duplicar) | |
 | 4.2 | Status de Produção (salvar/reordenar/sem duplicar) | |
 | 5.1 | Omie: credencial errada avisa rápido | |
+| 5.2 | Real Análise: sincronizar repovoa Fluxo de Caixa/DRE | |
