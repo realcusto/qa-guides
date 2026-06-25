@@ -83,6 +83,22 @@ são imagem** são recusados.
 - O arquivo que não é imagem é **recusado** com uma mensagem avisando que o
   formato/conteúdo não é uma imagem válida.
 
+### 1.4 — Imagem muito grande é recusada (limite de 5 MB)
+
+**Objetivo:** confirmar que não dá para enviar uma imagem acima de **5 MB**.
+
+**Passo a passo:**
+
+1. Como administrador, ao criar/editar uma novidade, tente enviar uma **imagem
+   grande, acima de 5 MB** (uma foto em alta resolução, por exemplo).
+2. Em seguida, envie uma **imagem normal, abaixo de 5 MB**.
+
+**Resultado esperado:**
+
+- A imagem **acima de 5 MB** é **recusada**, com aviso de que excede o tamanho
+  máximo de 5 MB. O sistema não trava nem demora muito para responder.
+- A imagem **abaixo de 5 MB** é enviada normalmente.
+
 ---
 
 ## 2. Real Preço — Orçamentos
@@ -296,6 +312,7 @@ aparecendo trocados entre empresas, **avise o time imediatamente**.
 | 1.1 | Link só aceita http/https | |
 | 1.2 | Imagens das novidades aparecem | |
 | 1.3 | Envio de imagem / recusa de não-imagem | |
+| 1.4 | Imagem acima de 5 MB é recusada | |
 | 2.1 | Prévia do DRE mostra valor mais recente | |
 | 2.2 | Status do orçamento (salvar/reordenar/sem duplicar) | |
 | 2.3 | Opção "Espremer em 1 página" removida | |
