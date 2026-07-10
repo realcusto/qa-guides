@@ -834,8 +834,10 @@ abre o cliente de e-mail (mailto) com o destinatário certo.
 
 1. Faça uma ação que dê **sucesso** e outra que dê **erro**.
 
-**Resultado esperado:** o toast de **sucesso** aparece em **cima à direita**; o de
-**erro**, **embaixo à direita**.
+**Resultado esperado:** os toasts (tanto de **sucesso** quanto de **erro**)
+aparecem no **canto inferior direito**. Ao abrir o **modal de emissão de NF-e**,
+os botões de ação (**Cancelar** / **Confirmar Emissão**) ficam no **canto
+inferior esquerdo**, sem serem cobertos pelo toast.
 
 ### 20.2 — Tema e selo do reCAPTCHA
 
