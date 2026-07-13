@@ -27,24 +27,30 @@ Cada teste tem **Objetivo**, **Passo a passo** e **Resultado esperado**.
 
 ### Pré-requisitos gerais
 
-> **Confirme com o time que o ambiente está com a versão 1.3.0 já publicada.**
+> **Ambiente pré-populado — comece por aqui.** Já existe um org de testes
+> **"QA — Release 1.3.0"** com a massa de dados deste guia pronta (produtos,
+> estoque com consumo recente, clientes com endereço, limites de crédito,
+> vendedor restrito, rota de entrega, plano de contas e um plano do Real Plano).
+> **Você precisa ser membro para vê-lo:** o time de QA já foi adicionado; se você
+> não tiver acesso, **peça ao desenvolvedor do app para te adicionar** (só ele
+> adiciona membros). Depois de logar, confirme que o org ativo é
+> **"QA — Release 1.3.0"** (troque pelo menu de organização, se preciso).
+>
+> **Emissão fiscal (NF-e/SPED), saldo real do ERP e o app mobile** ainda
+> precisam de credenciais/dispositivos reais mesmo no org de QA.
 
-- Um usuário **administrador** e um usuário com acesso a **Real Controle**,
-  **Real Análise** e **Real Plano**. Algumas telas só aparecem para
-  administradores.
-- Massa de dados à mão: **clientes/fornecedores com endereço preenchido**,
-  **produtos** e **estoque com movimentações de saída/venda** (o giro só aparece
-  se houve consumo no período), **vendas em aberto**, **títulos a receber** e
-  **plano de contas**.
-- Para o **Roteiro de entrega / mapa**: **internet liberada** no ambiente (o
-  botão "Sugerir roteiro" consulta serviços de mapa **externos** — OpenStreetMap/
-  Nominatim e OSRM), clientes com **endereço completo**, e o **perfil fiscal da
-  empresa** (usado como depósito de partida) com **endereço/CEP** preenchidos.
-- Para **vendedor restrito**: um usuário **vendedor** com alguns clientes
-  vinculados a ele, e um **celular** com o app para a parte do **App Mobile**.
-- Para o **saldo real** do Real Análise: pelo menos uma **conexão de ERP**
-  (idealmente **Omie**) de teste, já sincronizada — é o Omie que informa o
-  "Saldo em Contas".
+- **Confirme com o time que o ambiente está com a versão 1.3.0 já publicada.**
+- Um usuário **administrador** (algumas telas só aparecem para administradores).
+- Para o **Roteiro de entrega / mapa**: **internet liberada** no ambiente — o
+  botão "Sugerir roteiro" consulta serviços de mapa **externos** (OpenStreetMap/
+  Nominatim e OSRM). Os clientes do org de QA já vêm com endereço, e o **perfil
+  fiscal da empresa** (depósito de partida) já vem com endereço/CEP.
+- Para **vendedor restrito**: o org já tem o vendedor **"Vendedor QA"** com
+  clientes vinculados; para testar o login-como-vendedor (item 4.2/9.1), **vincule
+  um usuário** a ele na tela de Vendedores e use um **celular** com o app.
+- Para o **saldo real** do Real Análise: uma **conexão de ERP** (idealmente
+  **Omie**) de teste, já sincronizada — é o Omie que informa o "Saldo em Contas"
+  (a conexão que vem no org de QA é só um placeholder desconectado).
 
 ---
 
@@ -260,7 +266,9 @@ preferido** é ele. Criar venda para cliente de outro vendedor é **recusado**. 
 
 **Passo a passo:**
 
-1. Abra uma **carga** com itens de **vários clientes**.
+1. Gere uma **carga** a partir de vendas liberadas de **clientes diferentes** (o
+   org de QA já traz vendas liberadas para **Cliente Indústria**, **Cliente
+   Campinas** e **Cliente Santos**).
 2. No painel **"Roteiro de entrega"**, **arraste** as paradas (clientes) para
    definir a **ordem de entrega**.
 3. Observe a **ordem de carga** mostrada por parada.
